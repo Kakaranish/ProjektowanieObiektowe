@@ -16,18 +16,19 @@ final class Offer: Model, Content {
     @Field(key: "stock")
     var stock: Int
 
-    @OptionalParent(key: "category_id")
-    var category: Category?
+    @Parent(key: "category_id")
+    var category: Category
 
     @Children(for: \.$offer)
     var opinions: [Opinion]
 
     init() { }
 
-    init(id: UUID? = nil, name: String, price: Double, stock: Int) {
+    init(id: UUID? = nil, name: String, price: Double, stock: Int, categoryId: UUID) throws {
         self.id = id
         self.name = name
         self.price = price
         self.stock = stock
+        self.$category.id = categoryId
     }
 }

@@ -5,8 +5,8 @@ struct OfferMigration: Migration {
         return database.schema("offers")
             .id()
             .field("name", .string, .required)
-            .field("price", .int32, .required)
-            .field("stock", .double, .required)
+            .field("price", .double, .required)
+            .field("stock", .int, .required)
             .field("category_id", .uuid, .references("categories", "id"))
             .create()
     }

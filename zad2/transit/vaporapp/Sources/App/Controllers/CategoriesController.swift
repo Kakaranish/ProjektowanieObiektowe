@@ -9,7 +9,6 @@ struct CategoriesController: RouteCollection {
         categories.group(":categoryId") { category in
             category.get(use: getById)
             category.delete(use: delete)
-            category.put(use: update)
         }
     }
 
