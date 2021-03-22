@@ -1,0 +1,30 @@
+@url = http://localhost:21370
+
+###
+
+GET {{url}}/opinions HTTP/1.1
+
+###
+
+@opinionIdToGet = 9FF1DCCD-EC85-404B-951A-FC982721638D
+
+GET {{url}}/opinions/{{opinionIdToGet}} HTTP/1.1
+
+###
+
+@offerId = 2BE46900-3FB0-486A-A48A-6963705A0D0E
+
+POST {{url}}/opinions HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "Nice",
+    "offer": {
+        "id": "{{offerId}}"
+    }
+}
+
+###
+
+@opinionIdToRemove = E7C4935F-7C75-4035-935D-4D6AFD2F64F5
+DELETE  {{url}}/opinions/{{opinionIdToRemove}} HTTP/1.1

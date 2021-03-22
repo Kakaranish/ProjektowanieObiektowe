@@ -15,9 +15,9 @@ final class Opinion: Model, Content {
 
     init() { }
 
-    init(id: UUID? = nil, content: String, offer: Offer) {
+    init(id: UUID? = nil, content: String, offerId: UUID) {
         self.id = id
         self.content = content
-        self.offer = offer
+        self.$offer.id = offerId
     }
 }

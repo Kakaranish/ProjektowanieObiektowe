@@ -13,7 +13,9 @@ struct OffersController: RouteCollection {
     }
 
     func getAll(req: Request) throws -> EventLoopFuture<[Offer]> {
-        return Offer.query(on: req.db).all()
+        return Offer.query(on: req.db)
+            .join(Category.self, on: \Offer.$category.$id == \Category.$id)
+            .all()
     }
 
     func getById(req: Request) throws -> EventLoopFuture<Offer> {
