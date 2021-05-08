@@ -6,16 +6,16 @@ import org.springframework.stereotype.Component
 @Component
 class AuthService @Autowired constructor(
     private val userRepository: UserRepository
-){
-    fun signIn(email: String?, passwordPlaintext: String?) : Boolean {
-        if(email == null || passwordPlaintext == null) return false
+) {
+    fun signIn(email: String?, passwordPlaintext: String?): Boolean {
+        if (email == null || passwordPlaintext == null) return false
 
         var validPasswd = userRepository.getPasswdByEmail(email)
-        return validPasswd?.equals(passwordPlaintext) ?: false;
+        return validPasswd?.equals(passwordPlaintext) ?: false
     }
 
-    fun signUp(email: String?, passwordPlaintext: String?) : Boolean {
-        if(email == null || passwordPlaintext == null) return false
+    fun signUp(email: String?, passwordPlaintext: String?): Boolean {
+        if (email == null || passwordPlaintext == null) return false
 
         return userRepository.addUser(email, passwordPlaintext)
     }

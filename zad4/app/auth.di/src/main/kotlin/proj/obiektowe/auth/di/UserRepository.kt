@@ -12,8 +12,8 @@ class UserRepository {
         "user2@mail.com" to "SomePasswd"
     )
 
-    fun addUser(email: String, passwordPlainText: String) : Boolean{
-        if(_validCredentials.containsKey(email)) return false
+    fun addUser(email: String, passwordPlainText: String): Boolean {
+        if (_validCredentials.containsKey(email)) return false
 
         _validCredentials.put(email, passwordPlainText)
         return true
