@@ -13,7 +13,9 @@ final class Opinion: Model, Content {
     @Parent(key: "offer_id")
     var offer: Offer
 
-    init() { }
+    init() { 
+        // Intentionally unimplemented...
+    }
 
     init(id: UUID? = nil, content: String, offerId: UUID) {
         self.id = id

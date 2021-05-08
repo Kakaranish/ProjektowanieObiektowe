@@ -22,7 +22,9 @@ final class Offer: Model, Content {
     @Children(for: \.$offer)
     var opinions: [Opinion]
 
-    init() { }
+    init() { 
+        // Intentionally unimplemented...
+    }
 
     init(id: UUID? = nil, name: String, price: Double, stock: Int, categoryId: UUID) throws {
         self.id = id

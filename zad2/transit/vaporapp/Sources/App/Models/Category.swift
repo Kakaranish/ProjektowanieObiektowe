@@ -10,7 +10,9 @@ final class Category: Model, Content {
     @Field(key: "name")
     var name: String
 
-    init() { }
+    init() { 
+        // Intentionally unimplemented...
+    }
 
     init(id: UUID? = nil, name: String) {
         self.id = id
