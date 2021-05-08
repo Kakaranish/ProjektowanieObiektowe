@@ -1,10 +1,12 @@
-Install missing lib
+Build custom image
 ```
-apt-get install libz-dev
+cd custom_image
+./build.sh
 ```
 
-Start app with 
+Inside container start app with:
 ```
+cd /home/kprzystalski/transit/vaporapp
+vapor run migrate # Apply db migrations
 vapor run serve --hostname 0.0.0.0 --port 8080
 ```
-to be able to access web server outside container
