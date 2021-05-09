@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This is preview of the pre-commit hook. The file should be located
+# in this path .git/hooks
+
+echo "Running ktlintCheck..."
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+KOTLIN_APP_DIR="${SCRIPT_DIR}/../../zad4/app/auth.di"
+$KOTLIN_APP_DIR/gradlew -p $KOTLIN_APP_DIR ktlintCheck
+
+if [ $? -ne 0 ] ; then
+    echo "ktlintCheck failed. Cannot commit changes."
+  exit 1
+fi
