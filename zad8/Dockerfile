@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY ./app .
 RUN pip install -U Flask
+RUN pip install flask_wtf
 
 EXPOSE 80
 
