@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 it("When valid email and password is entered, then user is successfully logged in", () => {
     cy.visit('http://localhost:2137/log-in');
     
