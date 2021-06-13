@@ -11,7 +11,8 @@ it("When search phrase is too short, then error is displayed", () => {
         .click();
 
     cy.get('p[id="error-msg"]')
-        .contains("Search phrase is too short");
+        .contains("Search phrase is too short")
+        .should('be.visible');
 
     cy.url().should('eq', 'http://localhost:2137/search')
 });
